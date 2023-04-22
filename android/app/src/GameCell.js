@@ -5,10 +5,10 @@ import React from 'react';
 import { StyleSheet, View, Text } from 'react-native';
 
 // GameCell bileşeni
-const GameCell = ({ letter }) => {
+const GameCell = ({ value }) => {
   return (
     <View style={styles.cell}>
-      <Text style={styles.letter}>{letter}</Text>
+      <Text style={styles.letter}>{value}</Text>
     </View>
   );
 };

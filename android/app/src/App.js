@@ -18,7 +18,7 @@ const generateRandomLetter = () => {
 const generateRandomBoard = () => {
   const alphabet = 'ABCÇDEFGĞHIİJKLMNOÖPRSŞTUÜVYZ';
   const board = Array.from({ length: 10 }, () =>
-    Array.from({ length: 10 }, () => alphabet[Math.floor(Math.random() * alphabet.length)])
+    Array.from({ length: 8 }, () => alphabet[Math.floor(Math.random() * alphabet.length)])
   );
   return board;
 };
