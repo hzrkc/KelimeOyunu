@@ -168,7 +168,6 @@ dependencies {
 }
 
 project.ext.react = [
-    ...
     enableHermes: false, // default is true
 ]
 
