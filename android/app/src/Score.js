@@ -1,22 +1,24 @@
 import React from 'react';
 import { Text, StyleSheet } from 'react-native';
-import kelimeListesi from './kelimeListesi'; // Kelime listesi dosyasını içe aktaralım
+import kelimeListesi from './kelimeListesi';
 
 const Score = ({ score, word }) => {
+
   let matchingWordScore = 0;
+
+  if (word) {
+    const normalizedWord = word.trim().toUpperCase();
   
-  // Kelime listesindeki her kelime için kontrol yapalım
-  for (let i = 0; i < kelimeListesi.length; i++) {
-    // Girilen kelime kelime listesinde var mı diye kontrol edelim
-    if (word && kelimeListesi[i].toUpperCase() === word.toUpperCase()) {
-      // Kelime uzunluğuna göre puan hesaplayalım
-      const wordLength = word.length;
-      matchingWordScore = wordLength; // Kelime uzunluğu kadar puan verelim
-      
-      // Eşleşen kelime bulunduğunda döngüyü sonlandıralım
-      break;
+    for (let i = 0; i < kelimeListesi.length; i++) {
+      const normalizedKelime = kelimeListesi[i].trim().toUpperCase();
+  
+      if (normalizedKelime === normalizedWord) {
+        matchingWordScore = normalizedWord.length;
+        break;
+      }
     }
   }
+  
 
   return (
     <Text style={styles.score}>
