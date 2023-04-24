@@ -6,14 +6,6 @@ import Score from './Score';
 import { AppRegistry } from 'react-native';
 
 
-// Rasgele harf oluşturma fonksiyonu
-const generateRandomLetter = () => {
-  // Türkçe alfabede yer alan harfler
-  const letters = 'abcçdefgğhıijklmnoöprsştuüvyz';
-  // Rastgele bir harf seçip döndürüyoruz
-  return letters[Math.floor(Math.random() * letters.length)];
-};
-
 // Oyun tahtasını rastgele harflerle dolduran yardımcı fonksiyon
 const generateRandomBoard = () => {
   const alphabet = 'ABCÇDEFGĞHIİJKLMNOÖPRSŞTUÜVYZ';

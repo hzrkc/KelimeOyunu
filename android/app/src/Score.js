@@ -31,7 +31,7 @@ const styles = StyleSheet.create({
   score: {
     fontSize: 24,
     fontWeight: 'bold',
-    marginTop: 20,
+    marginTop: 5,
   },
   scoreNumber: {
     color: 'green',

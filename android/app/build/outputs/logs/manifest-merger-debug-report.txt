@@ -8,6 +8,7 @@ MERGED from C:\Users\hkf_4\Desktop\KelimeOyunu\android\app\src\main\AndroidManif
 MERGED from [com.facebook.flipper:flipper-network-plugin:0.125.0] C:\Users\hkf_4\.gradle\caches\transforms-3\d3cca00246c663d3c66c0792858497b5\transformed\jetified-flipper-network-plugin-0.125.0\AndroidManifest.xml:8:1-15:12
 MERGED from [com.facebook.flipper:flipper-fresco-plugin:0.125.0] C:\Users\hkf_4\.gradle\caches\transforms-3\d583b133a68ceecad4ecdddb740e6639\transformed\jetified-flipper-fresco-plugin-0.125.0\AndroidManifest.xml:8:1-15:12
 MERGED from [com.facebook.flipper:flipper:0.125.0] C:\Users\hkf_4\.gradle\caches\transforms-3\236929aa564a4c4dfa1b417642a2a2ae\transformed\jetified-flipper-0.125.0\AndroidManifest.xml:8:1-18:12
+MERGED from [:react-native-vector-icons] C:\Users\hkf_4\Desktop\KelimeOyunu\node_modules\react-native-vector-icons\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-9:12
 MERGED from [com.facebook.react:react-android:0.71.7] C:\Users\hkf_4\.gradle\caches\transforms-3\84bec54958abf3a45efcfc6e26585866\transformed\jetified-react-android-0.71.7-debug\AndroidManifest.xml:2:1-11:12
 MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] C:\Users\hkf_4\.gradle\caches\transforms-3\091aa78edfb1f2d80073a0612085f398\transformed\swiperefreshlayout-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [com.facebook.react:hermes-android:0.71.7] C:\Users\hkf_4\.gradle\caches\transforms-3\6df4b61676b98e2abf6f727efdf7f5ae\transformed\jetified-hermes-android-0.71.7-debug\AndroidManifest.xml:2:1-9:12
@@ -163,6 +164,8 @@ MERGED from [com.facebook.flipper:flipper-fresco-plugin:0.125.0] C:\Users\hkf_4\
 MERGED from [com.facebook.flipper:flipper-fresco-plugin:0.125.0] C:\Users\hkf_4\.gradle\caches\transforms-3\d583b133a68ceecad4ecdddb740e6639\transformed\jetified-flipper-fresco-plugin-0.125.0\AndroidManifest.xml:11:5-13:41
 MERGED from [com.facebook.flipper:flipper:0.125.0] C:\Users\hkf_4\.gradle\caches\transforms-3\236929aa564a4c4dfa1b417642a2a2ae\transformed\jetified-flipper-0.125.0\AndroidManifest.xml:11:5-13:41
 MERGED from [com.facebook.flipper:flipper:0.125.0] C:\Users\hkf_4\.gradle\caches\transforms-3\236929aa564a4c4dfa1b417642a2a2ae\transformed\jetified-flipper-0.125.0\AndroidManifest.xml:11:5-13:41
+MERGED from [:react-native-vector-icons] C:\Users\hkf_4\Desktop\KelimeOyunu\node_modules\react-native-vector-icons\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:react-native-vector-icons] C:\Users\hkf_4\Desktop\KelimeOyunu\node_modules\react-native-vector-icons\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
 MERGED from [com.facebook.react:react-android:0.71.7] C:\Users\hkf_4\.gradle\caches\transforms-3\84bec54958abf3a45efcfc6e26585866\transformed\jetified-react-android-0.71.7-debug\AndroidManifest.xml:5:5-7:41
 MERGED from [com.facebook.react:react-android:0.71.7] C:\Users\hkf_4\.gradle\caches\transforms-3\84bec54958abf3a45efcfc6e26585866\transformed\jetified-react-android-0.71.7-debug\AndroidManifest.xml:5:5-7:41
 MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] C:\Users\hkf_4\.gradle\caches\transforms-3\091aa78edfb1f2d80073a0612085f398\transformed\swiperefreshlayout-1.0.0\AndroidManifest.xml:20:5-44

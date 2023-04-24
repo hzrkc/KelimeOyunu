@@ -28,7 +28,7 @@ const GameCell = ({ value }) => {
 
   const interpolateRotation = animatedValue.interpolate({
     inputRange: [-1, 1],
-    outputRange: ['-5deg', '5deg'],
+    outputRange: ['-15deg', '15deg'],
   });
 
   return (
@@ -56,7 +56,7 @@ const styles = StyleSheet.create({
     borderRadius: 44,
   },
   letter: {
-    fontSize: 20,
+    fontSize: 26,
     fontWeight: 'bold',
   },
 });
