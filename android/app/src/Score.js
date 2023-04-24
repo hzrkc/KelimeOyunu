@@ -28,15 +28,21 @@ const Score = ({ score, word }) => {
 };
 
 const styles = StyleSheet.create({
+  scoreContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginBottom: 5,
+  },
   score: {
-    fontSize: 34,
+    fontSize: 30,
     fontWeight: 'bold',
-    marginBottom: 15,
   },
   scoreNumber: {
-    fontSize: 37,
+    fontSize: 45,
     color: 'black',
+    marginLeft: 5,
   },
 });
+
 
 export default Score;
