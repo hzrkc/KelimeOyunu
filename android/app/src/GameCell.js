@@ -53,7 +53,7 @@ const styles = StyleSheet.create({
     height: 40,
     justifyContent: 'center',
     alignItems: 'center',
-    borderRadius: 44,
+    borderRadius: 10,
   },
   letter: {
     fontSize: 26,

@@ -56,14 +56,14 @@ const styles = StyleSheet.create({
   container: {
     alignItems: 'center',
     justifyContent: 'center',
-    marginVertical: 20,
+    marginVertical: 15,
   },
   input: {
-    borderWidth: 1,
+    borderWidth: 4,
     borderColor: 'gray',
     padding: 10,
     marginBottom: 30,
-    width: '200%',
+    width: '400%',
     borderRadius: 15,
   },
   buttonContainer: {
@@ -75,15 +75,15 @@ const styles = StyleSheet.create({
     backgroundColor: 'red',
     marginRight: 10,
     padding: 15,
-    borderRadius: 40,
+    borderRadius: 10,
   },
   submitButton: {
     backgroundColor: 'green',
     padding: 15,
-    borderRadius: 40,
+    borderRadius: 10,
   },
   buttonText: {
-    color: 'white',
+    color: '#fdf5e6',
     fontSize: 30,
     fontWeight: 'bold',
   },

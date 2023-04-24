@@ -29,12 +29,13 @@ const Score = ({ score, word }) => {
 
 const styles = StyleSheet.create({
   score: {
-    fontSize: 24,
+    fontSize: 34,
     fontWeight: 'bold',
-    marginTop: 5,
+    marginBottom: 15,
   },
   scoreNumber: {
-    color: 'green',
+    fontSize: 37,
+    color: 'black',
   },
 });
 
