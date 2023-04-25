@@ -1,5 +1,6 @@
 import React from 'react';
 import { TextInput, View, TouchableOpacity, StyleSheet, Text } from 'react-native';
+import kelimeListesi from './kelimeListesi';
 
 const WordInput = ({ word, setWord, setBoard, setScore }) => {
   const handleClear = () => {
@@ -12,8 +13,24 @@ const WordInput = ({ word, setWord, setBoard, setScore }) => {
 
     if (isWordValid) {
       // Kelime puanını hesapla ve skoru güncelle
-      const wordScore = word.length;
-      setScore((prevScore) => prevScore + wordScore);
+      let matchingWordScore = 0;
+  
+      if (word) {
+        console.log(word);
+
+        const normalizedWord = word.trim().toUpperCase();
+      
+        for (let i = 0; i < kelimeListesi.length; i++) {
+          const normalizedKelime = kelimeListesi[i].trim().toUpperCase();
+      
+          if (normalizedKelime === normalizedWord) {
+            matchingWordScore = normalizedWord.length;
+            break;
+          }
+        }
+      }
+
+      setScore((prevScore) => prevScore + matchingWordScore);
 
       // Kelimenin hücrelerini temizle
       setWord('');
