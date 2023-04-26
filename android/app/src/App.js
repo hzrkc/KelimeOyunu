@@ -47,7 +47,13 @@ const App = () => {
   };
 
   useEffect(() => {
-    console.log(`wrongWordsCount has changed: ${wrongWordsCount}`);
+    console.log(`wrongWordsCount değişti, yeni değeri: ${wrongWordsCount}`);
+
+    if (wrongWordsCount === 3) {
+      setBoard(Array.from({ length: 10 }, () =>
+        Array.from({ length: 8 }, () => '')
+      ));
+    }
   }, [wrongWordsCount]);
 
   return (
