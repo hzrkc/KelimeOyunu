@@ -1,8 +1,8 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import { StyleSheet, View, Text, TouchableOpacity, Animated } from 'react-native';
 
 const GameCell = ({ value }) => {
-  const color = getRandomColor();
+  const [color, setColor] = useState(getRandomColor());
 
   const animatedValue = useRef(new Animated.Value(0)).current;
 
