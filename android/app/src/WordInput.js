@@ -15,7 +15,6 @@ const WordInput = ({ word, text, setText, setWord, setBoard, setScore, wrongWord
     const isWordValid = true; // kelime doğruysa true döndür
 
     if (isWordValid) {
-      console.log(word);
       
       // Kelime puanını hesapla ve skoru güncelle
 
@@ -30,7 +29,7 @@ const WordInput = ({ word, text, setText, setWord, setBoard, setScore, wrongWord
 
       for (let i = 0; i < kelimeListesi.length; i++) {
         const kelime = kelimeListesi[i];
-        console.log("Text: " + text);
+        
         if (kelime && text.trim().toUpperCase() === kelime.trim().toUpperCase()) {
           matchingWordScore = calculateWordScore(text, letterScores);
           isWordMatched = true;
@@ -77,7 +76,7 @@ const WordInput = ({ word, text, setText, setWord, setBoard, setScore, wrongWord
 
   return (
     <View style={styles.container}>
-      <Text>
+      <Text style = {styles.text}>
         {text}
       </Text>
       <View style={styles.buttonContainer}>
@@ -98,14 +97,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     marginVertical: 15,
   },
-  input: {
-    borderWidth: 4,
-    borderColor: 'gray',
-    padding: 10,
-    marginBottom: 30,
-    width: '400%',
-    borderRadius: 15,
-  },
   buttonContainer: {
     flexDirection: 'row',
     justifyContent: 'flex-start',
@@ -116,16 +107,28 @@ const styles = StyleSheet.create({
     marginRight: 10,
     padding: 15,
     borderRadius: 10,
+    marginTop: 20,
   },
   submitButton: {
     backgroundColor: 'green',
     padding: 15,
     borderRadius: 10,
+    marginTop: 20,
   },
   buttonText: {
     color: '#fdf5e6',
     fontSize: 30,
     fontWeight: 'bold',
+  },
+  text: {
+    fontSize: 24,
+    fontWeight: 'bold',
+    color: 'black',
+    borderWidth: 4,
+    borderColor: 'black',
+    padding: 10,
+    borderRadius: 10,
+    justifyContent: 'center',
   },
 });
 
