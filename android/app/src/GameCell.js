@@ -1,12 +1,15 @@
 import React, { useRef, useState } from 'react';
 import { StyleSheet, View, Text, TouchableOpacity, Animated } from 'react-native';
 
-const GameCell = ({ value }) => {
+const GameCell = ({ value , onClick }) => {
   const [color, setColor] = useState(getRandomColor());
 
   const animatedValue = useRef(new Animated.Value(0)).current;
 
   const handlePress = () => {
+    
+    onClick(value);
+
     Animated.sequence([
       Animated.timing(animatedValue, {
         toValue: 1,

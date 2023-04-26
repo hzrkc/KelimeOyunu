@@ -2,11 +2,12 @@ import React, { useState } from 'react';
 import { TextInput, View, TouchableOpacity, StyleSheet, Text } from 'react-native';
 import kelimeListesi from './kelimeListesi';
 
-const WordInput = ({ word, setWord, setBoard, setScore, wrongWordsCount, setWrongWordsCount }) => {
+const WordInput = ({ word, text, setText, setWord, setBoard, setScore, wrongWordsCount, setWrongWordsCount }) => {
   const [hataliKelimeSayisi, setHataliKelimeSayisi] = useState(0);
 
   const handleClear = () => {
     setWord('');
+    setText('');
   };
 
   const handleSubmit = () => {
@@ -29,8 +30,9 @@ const WordInput = ({ word, setWord, setBoard, setScore, wrongWordsCount, setWron
 
       for (let i = 0; i < kelimeListesi.length; i++) {
         const kelime = kelimeListesi[i];
-        if (kelime && word.trim().toUpperCase() === kelime.trim().toUpperCase()) {
-          matchingWordScore = calculateWordScore(word, letterScores);
+        console.log("Text: " + text);
+        if (kelime && text.trim().toUpperCase() === kelime.trim().toUpperCase()) {
+          matchingWordScore = calculateWordScore(text, letterScores);
           isWordMatched = true;
           break;
         }
@@ -58,6 +60,7 @@ const WordInput = ({ word, setWord, setBoard, setScore, wrongWordsCount, setWron
 
       // Kelimenin hücrelerini temizle
       setWord('');
+      setText('');
       setBoard(prevBoard => {
         const newBoard = [...prevBoard];
         for (let row = 0; row < newBoard.length; row++) {
@@ -74,13 +77,9 @@ const WordInput = ({ word, setWord, setBoard, setScore, wrongWordsCount, setWron
 
   return (
     <View style={styles.container}>
-      <TextInput
-        style={styles.input}
-        value={word}
-        onChangeText={setWord}
-        placeholder="                                           "
-        autoCapitalize="characters"
-      />
+      <Text>
+        {text}
+      </Text>
       <View style={styles.buttonContainer}>
         <TouchableOpacity style={styles.clearButton} onPress={handleClear}>
           <Text style={styles.buttonText}>X</Text>

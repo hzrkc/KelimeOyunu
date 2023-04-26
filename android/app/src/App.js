@@ -27,6 +27,12 @@ const App = () => {
 
   const [gameOver, setGameOver] = useState(false);
 
+  const [text, setText] = useState("");
+  function addLetter(letter){
+ 
+      setText(text+letter);
+  }
+
   // Klavyeden tuşa basıldığında tetiklenecek fonksiyon
   const handleKeyPress = (event) => {
     // Sadece harfler kabul edilecek, diğer tuşlar yok sayılacak
@@ -66,12 +72,18 @@ const App = () => {
 
   return (
     <View style={styles.container} onKeyPress={handleKeyPress}>
-      <GameBoard board={board} />
+
+      <GameBoard 
+      board={board} 
+      addLetter = {addLetter}/>
+
       <WordInput
         word={word}
         setWord={setWord}
         setBoard={setBoard}
         setScore={setScore}
+        text = {text}
+        setText = {setText}
         wrongWordsCount={wrongWordsCount}
         setWrongWordsCount={setWrongWordsCount}
       />
