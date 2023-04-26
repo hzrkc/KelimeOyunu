@@ -23,6 +23,7 @@ const App = () => {
   // Puanı tutacak state
   const [score, setScore] = useState(0);
 
+  const [wrongWordsCount, setWrongWordsCount] = useState(0);
 
   // Klavyeden tuşa basıldığında tetiklenecek fonksiyon
   const handleKeyPress = (event) => {
@@ -45,10 +46,14 @@ const App = () => {
     }
   };
 
+  useEffect(() => {
+    console.log(`wrongWordsCount has changed: ${wrongWordsCount}`);
+  }, [wrongWordsCount]);
+
   return (
     <View style={styles.container} onKeyPress={handleKeyPress}>
       <GameBoard board={board} />
-      <WordInput word={word} setWord={setWord} setBoard={setBoard} setScore={setScore} />
+      <WordInput word={word} setWord={setWord} setBoard={setBoard} setScore={setScore} wrongWordsCount={wrongWordsCount} setWrongWordsCount={setWrongWordsCount} />
       <Score score={score} />
     </View>
   );

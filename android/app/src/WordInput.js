@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { TextInput, View, TouchableOpacity, StyleSheet, Text } from 'react-native';
 import kelimeListesi from './kelimeListesi';
 
-const WordInput = ({ word, setWord, setBoard, setScore }) => {
+const WordInput = ({ word, setWord, setBoard, setScore, wrongWordsCount, setWrongWordsCount }) => {
   const [hataliKelimeSayisi, setHataliKelimeSayisi] = useState(0);
 
   const handleClear = () => {
@@ -38,6 +38,7 @@ const WordInput = ({ word, setWord, setBoard, setScore }) => {
       
       if (!isWordMatched) {
         setHataliKelimeSayisi(prevHataliKelimeSayisi => prevHataliKelimeSayisi + 1);
+        setWrongWordsCount((prevState) => prevState + 1);
       }
       console.log(hataliKelimeSayisi);
       
