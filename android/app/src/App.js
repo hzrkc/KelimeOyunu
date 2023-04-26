@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { View, StyleSheet } from 'react-native';
+import { View, StyleSheet, Text } from 'react-native';
 import GameBoard from './GameBoard';
 import WordInput from './WordInput';
 import Score from './Score';
@@ -24,6 +24,8 @@ const App = () => {
   const [score, setScore] = useState(0);
 
   const [wrongWordsCount, setWrongWordsCount] = useState(0);
+
+  const [gameOver, setGameOver] = useState(false);
 
   // Klavyeden tuşa basıldığında tetiklenecek fonksiyon
   const handleKeyPress = (event) => {
@@ -56,11 +58,34 @@ const App = () => {
     }
   }, [wrongWordsCount]);
 
+  useEffect(() => {
+    if (wrongWordsCount === 3) {
+      setGameOver(true);
+    }
+  }, [wrongWordsCount]);
+
   return (
     <View style={styles.container} onKeyPress={handleKeyPress}>
       <GameBoard board={board} />
-      <WordInput word={word} setWord={setWord} setBoard={setBoard} setScore={setScore} wrongWordsCount={wrongWordsCount} setWrongWordsCount={setWrongWordsCount} />
+      <WordInput
+        word={word}
+        setWord={setWord}
+        setBoard={setBoard}
+        setScore={setScore}
+        wrongWordsCount={wrongWordsCount}
+        setWrongWordsCount={setWrongWordsCount}
+      />
       <Score score={score} />
+      {gameOver && <GameOverMessage score={score} />}
+    </View>
+  );
+};
+
+const GameOverMessage = ( {score} ) => {
+  return (
+    <View style={styles.gameOverContainer}>
+      <Text style={styles.gameOverText}>Oyun Bitti.</Text>
+      <Text style={styles.gameOverText}>Skorunuz: {score} </Text>
     </View>
   );
 };
@@ -72,6 +97,21 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     backgroundColor: '#faebd7',
+  },
+  gameOverContainer: {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    bottom: 0,
+    right: 0,
+    backgroundColor: 'rgba(0, 0, 0, 0.5)',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  gameOverText: {
+    fontSize: 32,
+    fontWeight: 'bold',
+    color: 'white',
   },
 });
 
