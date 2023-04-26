@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { TextInput, View, TouchableOpacity, StyleSheet, Text } from 'react-native';
 import kelimeListesi from './kelimeListesi';
 
 const WordInput = ({ word, setWord, setBoard, setScore }) => {
+  const [hataliKelimeSayisi, setHataliKelimeSayisi] = useState(0);
+
   const handleClear = () => {
     setWord('');
   };
@@ -12,29 +14,50 @@ const WordInput = ({ word, setWord, setBoard, setScore }) => {
     const isWordValid = true; // kelime doğruysa true döndür
 
     if (isWordValid) {
+      console.log(word);
+      
       // Kelime puanını hesapla ve skoru güncelle
-      let matchingWordScore = 0;
-  
-      if (word) {
-        console.log(word);
 
-        const normalizedWord = word.trim().toUpperCase();
+      const letterScores = {
+        'A': 1, 'B': 3, 'C': 4, 'Ç': 4, 'D': 3, 'E': 1, 'F': 7, 'G': 5, 'Ğ': 8, 'H': 5,
+        'I': 2, 'İ': 1, 'J': 10, 'K': 1, 'L': 1, 'M': 2, 'N': 1, 'O': 2, 'Ö': 7, 'P': 5,
+        'R': 1, 'S': 2, 'Ş': 4, 'T': 1, 'U': 2, 'Ü': 3, 'V': 7, 'Y': 3, 'Z': 4
+      };
       
-        for (let i = 0; i < kelimeListesi.length; i++) {
-          const normalizedKelime = kelimeListesi[i].trim().toUpperCase();
-      
-          if (normalizedKelime === normalizedWord) {
-            matchingWordScore = normalizedWord.length;
-            break;
-          }
+      let matchingWordScore = 0;
+      let isWordMatched = false;
+
+      for (let i = 0; i < kelimeListesi.length; i++) {
+        const normalizedKelime = kelimeListesi[i].trim().toUpperCase();
+        if (word.trim().toUpperCase() === normalizedKelime) {
+          matchingWordScore = calculateWordScore(word, letterScores);
+          isWordMatched = true;
+          break;
         }
       }
+      
+      if (!isWordMatched) {
+        setHataliKelimeSayisi(prevHataliKelimeSayisi => prevHataliKelimeSayisi + 1);
+      }
+      console.log(hataliKelimeSayisi);
+      
+      function calculateWordScore(word, letterScores) {
+        let score = 0;
+        const normalizedWord = word.trim().toUpperCase();
+        for (let i = 0; i < normalizedWord.length; i++) {
+          const letter = normalizedWord.charAt(i);
+          if (letterScores.hasOwnProperty(letter)) {
+            score += letterScores[letter];
+          }
+        }
+        return score;
+      }
 
-      setScore((prevScore) => prevScore + matchingWordScore);
+      setScore(prevScore => prevScore + matchingWordScore);
 
       // Kelimenin hücrelerini temizle
       setWord('');
-      setBoard((prevBoard) => {
+      setBoard(prevBoard => {
         const newBoard = [...prevBoard];
         for (let row = 0; row < newBoard.length; row++) {
           for (let cell = 0; cell < newBoard[row].length; cell++) {

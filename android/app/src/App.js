@@ -1,10 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { View, StyleSheet } from 'react-native';
 import GameBoard from './GameBoard';
 import WordInput from './WordInput';
 import Score from './Score';
-import { AppRegistry } from 'react-native';
-
 
 // Oyun tahtasını rastgele harflerle dolduran yardımcı fonksiyon
 const generateRandomBoard = () => {
@@ -18,10 +16,26 @@ const generateRandomBoard = () => {
 const App = () => {
   // Oyun tahtasını tutacak state
   const [board, setBoard] = useState(() => generateRandomBoard());
+  
   // Girilen kelimeyi tutacak state
   const [word, setWord] = useState('');
+
   // Puanı tutacak state
   const [score, setScore] = useState(0);
+
+  // Hatalı kelime sayısını tutacak state
+  const [hataliKelimeSayisi, setHataliKelimeSayisi] = useState(0);
+
+  // Hatalı kelime sayısı değiştiğinde çalışacak etki alanı
+
+  
+  useEffect(() => {
+    console.log("App:" + hataliKelimeSayisi);
+    if (hataliKelimeSayisi >= 3) {
+      setBoard(Array.from({ length: 10 }, () => Array.from({ length: 8 }, () => '')));
+    }
+  }, [hataliKelimeSayisi]);
+
 
   // Klavyeden tuşa basıldığında tetiklenecek fonksiyon
   const handleKeyPress = (event) => {
@@ -44,10 +58,14 @@ const App = () => {
     }
   };
 
+  if (hataliKelimeSayisi >= 3) {
+    setBoard(Array.from({ length: 10 }, () => Array.from({ length: 8 }, () => '')));
+  }
+
   return (
     <View style={styles.container} onKeyPress={handleKeyPress}>
       <GameBoard board={board} />
-      <WordInput word={word} setWord={setWord} setBoard={setBoard} setScore={setScore} />
+      <WordInput word={word} setWord={setWord} setBoard={setBoard} setScore={setScore} hataliKelimeSayisi={hataliKelimeSayisi} setHataliKelimeSayisi={setHataliKelimeSayisi} />
       <Score score={score} />
     </View>
   );
