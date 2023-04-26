@@ -28,8 +28,8 @@ const WordInput = ({ word, setWord, setBoard, setScore, wrongWordsCount, setWron
       let isWordMatched = false;
 
       for (let i = 0; i < kelimeListesi.length; i++) {
-        const normalizedKelime = kelimeListesi[i].trim().toUpperCase();
-        if (word.trim().toUpperCase() === normalizedKelime) {
+        const kelime = kelimeListesi[i];
+        if (kelime && word.trim().toUpperCase() === kelime.trim().toUpperCase()) {
           matchingWordScore = calculateWordScore(word, letterScores);
           isWordMatched = true;
           break;
