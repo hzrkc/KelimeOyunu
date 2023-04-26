@@ -23,19 +23,6 @@ const App = () => {
   // Puanı tutacak state
   const [score, setScore] = useState(0);
 
-  // Hatalı kelime sayısını tutacak state
-  const [hataliKelimeSayisi, setHataliKelimeSayisi] = useState(0);
-
-  // Hatalı kelime sayısı değiştiğinde çalışacak etki alanı
-
-  
-  useEffect(() => {
-    console.log("App:" + hataliKelimeSayisi);
-    if (hataliKelimeSayisi >= 3) {
-      setBoard(Array.from({ length: 10 }, () => Array.from({ length: 8 }, () => '')));
-    }
-  }, [hataliKelimeSayisi]);
-
 
   // Klavyeden tuşa basıldığında tetiklenecek fonksiyon
   const handleKeyPress = (event) => {
@@ -58,14 +45,10 @@ const App = () => {
     }
   };
 
-  if (hataliKelimeSayisi >= 3) {
-    setBoard(Array.from({ length: 10 }, () => Array.from({ length: 8 }, () => '')));
-  }
-
   return (
     <View style={styles.container} onKeyPress={handleKeyPress}>
       <GameBoard board={board} />
-      <WordInput word={word} setWord={setWord} setBoard={setBoard} setScore={setScore} hataliKelimeSayisi={hataliKelimeSayisi} setHataliKelimeSayisi={setHataliKelimeSayisi} />
+      <WordInput word={word} setWord={setWord} setBoard={setBoard} setScore={setScore} />
       <Score score={score} />
     </View>
   );
