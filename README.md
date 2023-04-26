@@ -4,12 +4,12 @@
 Bu projede, Oyun, 8x10'luk bir alanda oynanacak. Oyuncular, harflerin düştüğü alanda anlamlı kelimeler oluşturacaklar. Kelime havuzu, en az 50.000 kelime içermeli ve Türk Dil Kurumundaki kelimeler kullanılmalıdır. Oyun, başlangıçta belirli bir harf havuzuyla başlayacak ve belirli bir süre sonra rastgele harfler düşecek. Harfler, sesli ve sessiz harfler karışık olacak ve belirli bir oranda sesli ve sessiz harflerle başlanacak. Oyuncular, oluşturdukları kelimenin anlamlı olduğunu doğrulamak için onay düğmesine veya ekranı sağa doğru kaydırarak kontrol etmelidirler. Eğer kelime anlamsızsa, silmek için bir silme düğmesi olmalıdır. Seçilen harfler istenmiyorsa, iptal etmek için üstlerine tıklanabilir. Projenin geliştirilmesinde React-Native kullanılmıştır.
 # II.	İÇERIK
 
-A.	Proje Tanımı
-B.	Kullanılan Yöntemlerin Açıklamaları
-C.	Proje Algoritması 
-D.	Proje Sonuçları
-E.	Yalancı Kod
-F.	Kaynakça
+A. Proje Tanımı
+B. Kullanılan Yöntemlerin Açıklamaları
+C. Proje Algoritması 
+D. Proje Sonuçları
+E. Yalancı Kod
+F. Kaynakça
 
 # III.	GİRİŞ
 
