@@ -1,6 +1,6 @@
 # KelimeOyunu
 
-Solarized dark             |  Solarized Ocean
+             |  Solarized Ocean
 :-------------------------:|:-------------------------:
 ![](https://github.com/hzrkc/KelimeOyunu/blob/main/images/1.png?raw=true)  |  ![](https://github.com/hzrkc/KelimeOyunu/blob/main/images/4.png?raw=true)
  
